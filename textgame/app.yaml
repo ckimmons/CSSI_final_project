@@ -1,0 +1,27 @@
+application: textgame
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: .*
+  script: main.app
+
+libraries:
+<<<<<<< HEAD:game/app.yaml
+- name: jinja2
+  version: latest
+  
+- name: webapp2
+  version: "2.5.2"
+=======
+>>>>>>> 1fbf2021090a7e7e09b4c5a6b43ccbaa1b5a011d:textgame/app.yaml
+- name: jinja2
+  version: latest
+- name: webapp2
+  version: "2.5.2"
