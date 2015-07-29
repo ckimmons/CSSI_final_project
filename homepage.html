@@ -5,19 +5,25 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="static_files/design.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <title> Welcome to Study Space! </title>
+  <title> Website Name </title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="static_files/design.js"></script>
 </head>
 <body>
 
+<div  id ="timeOfDay"> {{ timeofday }} </div>
+
+
   <h1> Study Space </h1>
-  <a href="#" class="startButton">Start</a>
-  <a href="#" class="stopButton">Stop</a>
-  <a href="#" class="menuButton">Menu</a>
+
+    <a href="/stopwatchstart" class="startButton">Start</a>
+    <a href="/stopwatchstop?key_name={{ key_name }}" class="stopButton">Stop</a>
+    <a href="#" class="menuButton">Menu</a>
+
 
   <div id = "menu">
     <br>
@@ -28,9 +34,9 @@
     <li style="list-style-type: none;"> Notes </li>
     <br>
     <li style="list-style-type: none;"> Rewards </li>
+
+    <div  id = "logOut">  {{ logout }} </div>
   </div>
-
-
 
   <div class="English-Menu">
   <nav class="menu">
@@ -389,12 +395,14 @@
 
 <div id="information">
   <img  src= "static_files/aboutus.png" height="1000" width="1800">
+
  </div>
 
 </div>
 </div>
 
 <div id = "aboutUs">
+We are human.
 <div>
 </body>
 </html>
