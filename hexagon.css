@@ -1,10 +1,43 @@
+#English{
+  /*background-image: url("");*/
+  background-color: purple;
+  margin-left: 56%;
+}
+
+#Math{
+  /*background-image: url("http://resultncutoff.in/wp-content/uploads/2015/03/maths-ftr.jpg");*/
+  background-color: blue;
+  margin-left: 60%;
+}
+
+#Humanities{
+  /*background-image: url("");*/
+  background-color: yellow;
+  margin-left: 55%;
+
+}
+
+#Science{
+  /*background-image: url("");*/
+  background-color: orange;
+  margin-left: 50%;
+
+}
+
+#Arts{
+  /*background-image: url("");*/
+  background-color: green;
+  margin-left: 56%;
+
+}
+
+
 
 .hexagon {
   position: relative;
   margin: 100px auto;
   width: 190px;
   height: 110px;
-  background-image: url("http://ak-hdl.buzzfed.com/static/enhanced/webdr03/2013/3/25/12/enhanced-buzz-18159-1364229545-0.jpg");
   background-position: center center;
   z-index: 1;
   /* Text styling */
@@ -58,4 +91,35 @@
   right: 0;
   transform-origin: right top;
   transform: rotate(60deg) translate(110px, 0);
+}
+
+.zoom {
+  zoom: 60%;
+}
+
+#information{
+  background-color: black;
+  opacity: 0.3;
+  margin-left: 10%;
+  font-family: Helvetica;
+  color: white;
+  font-size: 30px;
+  width: 500px;
+  padding: 20px;
+  border-color: white;
+  border-radius: 20px;
+
+}
+
+
+h1{
+  text-align: left;
+  margin-left: 10%;
+  font-family: Helvetica;
+  font-size: 50px;
+  color: #202833;
+}
+body{
+  background-color: #F0F4F7;
+  margin-top: 20px;
 }
