@@ -33,18 +33,17 @@ class MainHandler(webapp2.RequestHandler):
         if user:
             logging.info(user)
             so_url = users.create_logout_url('/')
-            template_vars["logout"]= "<a href="+so_url+">sign_out</a>"
+            template_vars["logout"]= "<a href="+so_url+">Welcome! sign out</a>"
             template = jinja_environment.get_template("homepage.html")
             self.response.write(template.render(template_vars))
             greeting = ('Welcome, %s! (<a href="%s">sign_out</a>)' %
                 (user.nickname(), users.create_logout_url('/')))
         else:
-            template_vars["login"] = "<a href="+users.create_login_url('/')+">Sign in or register</a>"
+            template_vars["login"] = "<a href="+users.create_login_url('/')+">Sign in</a>"
             logging.info("user is not logged in")
             template = jinja_environment.get_template("login.html")
             self.response.write(template.render(template_vars))
-            # greeting = ('<a href="%s">Sign in or register</a>.' %
-            #     users.create_login_url('/'))
+
 
 
 
@@ -58,7 +57,7 @@ class StopwatchStartHandler(webapp2.RequestHandler):
         starttime = datetime.datetime.now()
         stopwatch1 = Stopwatch(starttime=starttime)
         stopwatch_key = stopwatch1.put()
-        self.response.write(stopwatch_key.urlsafe())
+        # self.response.write(stopwatch_key.urlsafe())
 
 
 class StopwatchStopHandler(webapp2.RequestHandler):

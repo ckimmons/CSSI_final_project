@@ -9,7 +9,7 @@ var subSections = ["#Writing"] //"#storyTelling", "#Literature", "#Algebra", "#G
 for(var i = 0; sections.length>i; i++){
     $(hexIdent[i]).mouseenter((function(notFive){
     console.log(notFive);
-       return function(){ 
+       return function(){
         $(notFive).show();
        }
 
@@ -17,7 +17,7 @@ for(var i = 0; sections.length>i; i++){
 
     $(hexIdent[i]).mouseleave((function(notFive){
     console.log(notFive);
-       return function(){ 
+       return function(){
         $(notFive).hide();
        }
 
