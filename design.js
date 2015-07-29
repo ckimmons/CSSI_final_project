@@ -24,6 +24,14 @@ $(window).load(function () {
                                         $(".hexagon4").mouseleave(function(){
                                           $('.hexagon4').stop().animate({ "margin-left": '43%' }, {queue: false});
                                           });
+                                              $(".hexagon5").hover(function(){
+                                                $('.hexagon5').stop().animate({ "margin-left": '53%' }, {queue: false});
+                                              });
+                                                    $(".hexagon5").mouseleave(function(){
+                                                      $('.hexagon5').stop().animate({ "margin-left": '49%' }, {queue: false});
+                                                      });
+
+
 
 
 });
