@@ -1,7 +1,7 @@
 #English{
   /*background-image: url("");*/
   background-color: purple;
-  margin-left: 56%;
+  margin-left: 55%;
 }
 
 #Math{
@@ -13,22 +13,38 @@
 #Humanities{
   /*background-image: url("");*/
   background-color: yellow;
-  margin-left: 55%;
+  margin-left: 60%;
 
 }
 
 #Science{
   /*background-image: url("");*/
   background-color: orange;
-  margin-left: 50%;
+  margin-left: 55%;
 
 }
 
 #Arts{
   /*background-image: url("");*/
   background-color: green;
-  margin-left: 56%;
+  margin-left: 55%;
 
+}
+
+#englishSubList{
+  display: none;
+}
+#humanitiesSubList{
+  display: none;
+}
+#scienceSubList{
+  display: none;
+}
+#mathSubList{
+  display: none;
+}
+#artSubList{
+  display: none;
 }
 
 
