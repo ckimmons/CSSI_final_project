@@ -17,15 +17,6 @@
 
 }
 
-div.hexagon div.SubList {
-  display:none;
-}
-
-div.hexagon:hover div.SubList {
-  display:block;
-
-}
-
 #Science{
   /*background-image: url("");*/
   background-color: orange;
