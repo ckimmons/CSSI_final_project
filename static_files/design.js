@@ -30,8 +30,8 @@ $(window).load(function () {
     $("#Arts").mouseleave(function(){
       $('#Arts').stop().animate({ "margin-left": '55%' }, {queue: false});
     });
-    $(".myButton").click(function() {
-      $('.mybutton').stop().animate({ "margin-left": '80%' }, {queue: false});
+    $(".menuButton").click(function() {
+      $('.menuButton').stop().animate({ "margin-left": '80%' }, {queue: false});
       $("#menu").slideToggle();
     });
 });
