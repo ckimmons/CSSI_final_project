@@ -73,14 +73,10 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_query.order(-Stopwatch.endtime)
         stopwatch_data = stopwatch_query.fetch(limit=1)[0]
         self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
-<<<<<<< HEAD
-        stopwatch_data.delete()
-    
-=======
+
         template_vars = {"timeofday": time.asctime()}
         template = jinja_environment.get_template("stopwatch.html")
         self.response.write(template.render(template_vars))
->>>>>>> b3a4ce760e0e28b5d6192ae8dbad8d7737ae7aeb
 
 
 
@@ -95,25 +91,12 @@ class LoginHandler(webapp2.RequestHandler):
                 users.create_login_url('/'))
         self.response.write('<html><body>%s</body></html>' % greeting)
 
-
-<<<<<<< HEAD
-# class ByeByeHandler(webapp2.RequestHandler):
-#     def get(self):
-#         self.response.write('<html><body>Bye!<button><a href="/">Home</a></button></body></html>')
-=======
-
->>>>>>> b3a4ce760e0e28b5d6192ae8dbad8d7737ae7aeb
-
-
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/login', LoginHandler),
-<<<<<<< HEAD
     # ('/byebye', ByeByeHandler),
-=======
->>>>>>> b3a4ce760e0e28b5d6192ae8dbad8d7737ae7aeb
     ('/stopwatchstart', StopwatchStartHandler),
     ('/stopwatchstop', StopwatchStopHandler),
 ], debug=True)
