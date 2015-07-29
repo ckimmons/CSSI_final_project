@@ -1,4 +1,7 @@
 $(document).ready(function () {
-    $('.hexagon').mouseenter(function(){
+    $("#English").mouseenter(function(){
         $(".SubList").show();
-});
+    })
+    $("#English").mousleave(function(){
+        $(".SubList").hide();
+    })
