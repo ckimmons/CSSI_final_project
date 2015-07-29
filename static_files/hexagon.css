@@ -1,19 +1,19 @@
 #English{
   margin-top: 20px;
-  background-image: url("static_files/English.jpg");
+  background-image: url("English.jpg");
   background-color: purple;
   margin-left: 55%;
 }
 
 #Math{
-  background-image: url("static_files/Math.jpg");
+  background-image: url("Math.jpg");
     background-size: 90%;
   background-color: blue;
   margin-left: 60%;
 }
 
 #Humanities{
-  background-image: url("static_files/Humanities.jpg");
+  background-image: url("Humanities.jpg");
   background-size: 100%;
   background-position: left;
   background-color: yellow;
@@ -22,14 +22,14 @@
 }
 
 #Science{
-    background-image: url("static_files/Science.jpg");
+    background-image: url("Science.jpg");
   background-color: orange;
   margin-left: 55%;
 
 }
 
 #Arts{
-  background-image: url("static_files/Art.jpg");
+  background-image: url("Art.jpg");
   background-size: 80%;
   background-position: left;
   background-color: green;
@@ -190,7 +190,7 @@ img{
 	cursor:pointer;
 	color:#666666;
 	font-family:Arial;
-	font-size:15px;
+	font-size:25px;
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
