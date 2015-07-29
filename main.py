@@ -28,7 +28,8 @@ import time
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        template_vars = {"timeofday": time.asctime()}
+        key_name = self.request.get("key_name")
+        template_vars = {"timeofday": time.asctime(), "key_name": key_name}
         user = users.get_current_user()
         if user:
             logging.info(user)
@@ -47,6 +48,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
+
 class Stopwatch(ndb.Model):
     starttime = ndb.DateTimeProperty()
     endtime = ndb.DateTimeProperty()
@@ -57,7 +59,8 @@ class StopwatchStartHandler(webapp2.RequestHandler):
         starttime = datetime.datetime.now()
         stopwatch1 = Stopwatch(starttime=starttime)
         stopwatch_key = stopwatch1.put()
-        # self.response.write(stopwatch_key.urlsafe())
+        urlsafe_key = stopwatch_key.urlsafe()
+        self.redirect('/?key_name=%s' %urlsafe_key)
 
 
 class StopwatchStopHandler(webapp2.RequestHandler):
