@@ -1,4 +1,6 @@
 $(window).load(function () {
+    $("#englishSubList").hide(function(){
+    });
     $("#English").hover(function(){
       $('#English').stop().animate({ "margin-left": '50%' }, {queue: false});
     });
