@@ -67,13 +67,7 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_query.order(-Stopwatch.endtime)
         stopwatch_data = stopwatch_query.fetch(limit=1)[0]
         self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
-
-
-
-
-
-
-
+        stopwatch_data.delete()
 
 
 

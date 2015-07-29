@@ -154,15 +154,19 @@ body{
 }
 
 #information {
+  font-family: Helvetica;
   width: 100%;
   margin-top: 15%;
   margin: 0,auto;
   background-color: #8CB2CA;
+ color: white;
   border:#F0F4F7;
   height: 1350px;
 }
 
-
+img{
+  margin-left: 10%;
+}
 
 .myButton {
   float: right;
