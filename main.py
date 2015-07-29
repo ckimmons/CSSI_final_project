@@ -72,8 +72,9 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch.endtime = datetime.datetime.now()
         stopwatch.put()
         stopwatch_query = Stopwatch.query()
-        stopwatch_query.order(-Stopwatch.endtime)
-        stopwatch_data = stopwatch_query.fetch(limit=1)[0]
+        stopwatch_query_ordered = stopwatch_query.order(-Stopwatch.endtime)
+        stopwatch_list = stopwatch_query_ordered.get()
+        stopwatch_data = stopwatch_list
         self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
         template_vars = {"timeofday": time.asctime()}
         template = jinja_environment.get_template("stopwatch.html")
