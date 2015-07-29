@@ -2,29 +2,46 @@
 <html>
 <head>
   <link rel="stylesheet" tpye="text/css" href="hexagon.css">
-  <script src="static_files.jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="design.js"></script>
-
 </head>
 <body>
+  <title> Website Name </title>
+  <h1> Study Space </h1>
+
+  <a href="#" class="myButton">Menu</a>
+  <div id = "menu">
+    <br>
+  <ul>
+    <li style="list-style-type: none;"> Log in </li>
+    <br>
+    <li style="list-style-type: none;"> Track your progress </li>
+    <br>
+    <li style="list-style-type: none;"> Notes </li>
+    <br>
+    <li style="list-style-type: none;"> Rewards </li>
+  </div>
+
   <div class="English-Menu">
   <nav class="menu">
     <ul class="EnglishResources">
+
       <div class="hexagon" id="English">
-      <li>English
+        English
+      <li>
         <div id="englishSubList">
         <ul class="sub-menu">
           <li>Writing
             <div id="writingLinkMenu">
             <ul>
               <li>
-                <a href="https://owl.english.purdue.edu/owl/section/1/">Purdue Owl</a>
+                <a href="https://owl.english.purdue.edu/owl/section/1/"> Purdue Owl</a>
               </li>
               <li>
-                <a href="http://oedb.org/ilibrarian/150-writing-resources/">Open Education Database</a>
+                 <a href="http://oedb.org/ilibrarian/150-writing-resources/">Open Education Database</a>
               </li>
               <li>
-                <a href="http://study.com/articles/45_Essential_Resources_for_Student_Writers.html">Study.com</a>
+              <a href="http://study.com/articles/45_Essential_Resources_for_Student_Writers.html">Study.com</a>
               </li>
             </ul>
           </div>
@@ -33,26 +50,24 @@
             <div id="storyLinkMenu">
             <ul>
               <li>
-                <a href="http://www.meridianstories.com/storytellers/tool-kit/creative-brainstorming-techniques/"> Meridian Storytellers</a>
+                 <a href="http://www.meridianstories.com/storytellers/tool-kit/creative-brainstorming-techniques/"> Meridian Storytellers</a>
+              <li>
+                 <a href="https://www.mercy.edu/faculty-center-teaching-and-learning/fctl-%C3%A0-la-carte/lights-camera-action-digital-storytelling"> Mercy College</a>
               </li>
               <li>
-                <a href="https://www.mercy.edu/faculty-center-teaching-and-learning/fctl-%C3%A0-la-carte/lights-camera-action-digital-storytelling"> Mercy College</a>
-              </li>
-              <li>
-                <a href="http://digitalstorytelling.coe.uh.edu/">Tips for Digital Storytelling</a>
+                 <a href="http://digitalstorytelling.coe.uh.edu/">Tips for Digital Storytelling</a>
               </li>
             </ul>
-          </div>
+            </div>
           </li>
-          <li>Literature
+          <li> Literature
             <div id="litLinkMenu">
             <ul>
               <li>
-                <a href="http://www.studentguide.org/english-literature-resource-list/">Student Guide
-                </a>
+                 <a href="http://www.studentguide.org/english-literature-resource-list/">Student Guide
               </li>
               <li>
-                <a href="http://www.sparknotes.com/">SparkNotes</a>
+                  <a href="http://www.sparknotes.com/">SparkNotes</a>
               </li>
               <li>
                 <a href="http://www.shmoop.com/college/">Shmoop</a>
@@ -60,17 +75,22 @@
             </ul>
             </div>
           </li>
+          </li>
         </ul>
-      </div>
-      </div>
+        </div>
       </li>
       <div class="face1"></div>
       <div class="face2"></div>
       </div>
+
+
       <div class="hexagon" id="Math">
-      <li>Math
+        Math
+      <li>
+        <div id="mathSubList">
         <ul class="sub-menu">
           <li>Algebra
+            <div id="algebraLinks">
             <ul>
               <li>
                 <a href="http://www.wtamu.edu/academic/anns/mps/math/mathlab/col_algebra/">Western Texas A&M</a>
@@ -82,8 +102,10 @@
                 <a href="https://clep.collegeboard.org/exam/college-algebra/resources">CLEP</a>
               </li>
             </ul>
+          </div>
           </li>
           <li>Geometry
+            <div id="geometryLinks">
             <ul>
               <li>
                 <a href="http://www.pearsonhighered.com/educator/product/College-Geometry-A-Problem-Solving-Approach-with-Applications/9780131879690.page">Pearson</a>
@@ -95,8 +117,10 @@
                 <a href="http://www.purplemath.com/">PurpleMath</a>
               </li>
             </ul>
+            </div>
           </li>
           <li>Calculus
+            <div id="calculusLinks">
             <ul>
               <li>
                 <a href="http://www.calculus.org/">Calculus.org</a>
@@ -108,8 +132,10 @@
                 <a href="http://www.huffingtonpost.com/oscar-fernandez/6-free-to-low-cost-resour_b_5599990.html">Huffington Post</a>
               </li>
             </ul>
+            </div>
           </li>
           <li>Statistics
+            <div id="statsLinks">
             <ul>
               <li>
                 <a href="http://www.math.hope.edu/stats/">Hope</a>
@@ -121,15 +147,21 @@
                 <a href="https://apps.carleton.edu/curricular/math/resources/"> Carleton College </a>
               </li>
             </ul>
+            </div>
           </li>
+        </ul>
+        </div>
       </li>
       <div class="face1"></div>
       <div class="face2"></div>
       </div>
       <div class="hexagon" id="Science">
-      <li>Science
+        Science
+      <li>
+        <div id="scienceSubList">
         <ul class="sub-menu">
           <li>Life Science
+            <div id="lifeLinks">
             <ul>
               <li>
                 <a href="https://www.mesacc.edu/departments/life-science/anatomy-physiology/resources">Mesa College</a>
@@ -141,8 +173,10 @@
                 <a href="http://www.cals.wisc.edu/academics/undergraduate-programs/learning-resources/">University of Wisconsin</a>
               </li>
             </ul>
+            </div>
           </li>
           <li>Chemistry
+            <div id="chemLinks">
             <ul>
               <li>
                 <a href="http://www.chm.davidson.edu/">Davidson College</a>
@@ -154,8 +188,10 @@
                 <a href="http://madisoncollege.edu/chemistry-resources">Madison College</a>
               </li>
             </ul>
+            </div>
           </li>
           <li>Physics
+            <div id="physicsLinks">
             <ul>
               <li>
                 <a href="https://openstaxcollege.org/textbooks/college-physics/resources">Open Stax
@@ -168,8 +204,10 @@
                 <a href="http://ocw.mit.edu/courses/physics/">MIT</a>
               </li>
             </ul>
+            </div>
           </li>
           <li>Geology
+            <div id="geoLinks">
             <ul>
               <li>
                 <a href="http://college.cengage.com/geology/resources/geologylink/">Cengage</a>
@@ -181,8 +219,10 @@
                 <a href="http://www.cornellcollege.edu/geology/resources-students/index.shtml">Cornell College</a>
               </li>
             </ul>
+            </div>
           </li>
           <li>Computer Science
+            <div id="compLinks">
             <ul>
               <li>
                 <a href="http://www.w3schools.com/">W3Schools</a>
@@ -194,14 +234,18 @@
                 <a href="http://www.bestcolleges.com/resources/computer-science/">BestColleges</a>
               </li>
             </ul>
+            </div>
           </li>
         </ul>
+      </div>
       </li>
       <div class="face1"></div>
       <div class="face2"></div>
       </div>
       <div class="hexagon" id="Humanities">
-      <li>Humanities
+        Humanities
+      <li>
+        <div id="humanitiesSubList">
         <ul class="sub-menu">
           <li>History
             <ul>
@@ -257,12 +301,15 @@
             </ul>
           </li>
         </ul>
+        </div>
       </li>
       <div class="face1"></div>
       <div class="face2"></div>
       </div>
       <div class="hexagon" id="Arts">
-      <li>Arts
+        Arts
+      <li>
+        <div id="artSubList">
         <ul class="sub-menu">
           <li>Performing Arts
             <ul>
@@ -321,6 +368,7 @@
             </ul>
           </li>
         </ul>
+        </div>
       </li>
       <div class="face1"></div>
       <div class="face2"></div>
@@ -328,5 +376,16 @@
     </ul>
   </nav>
 </div>
+
+<div id="information">
+  Some text about what the purpose of our web app is.
+  <img src= "static_files/aboutus.jpg"
+
+</div>
+</div>
+
+<div id = "aboutUs">
+We are human.
+<div>
 </body>
 </html>
