@@ -1,34 +1,59 @@
 #English{
-  /*background-image: url("");*/
+  margin-top: 20px;
+  background-image: url("static_files/English.jpg");
   background-color: purple;
   margin-left: 55%;
 }
 
 #Math{
-  /*background-image: url("http://resultncutoff.in/wp-content/uploads/2015/03/maths-ftr.jpg");*/
+  background-image: url("static_files/Math.jpg");
+    background-size: 90%;
   background-color: blue;
   margin-left: 60%;
 }
 
 #Humanities{
-  /*background-image: url("");*/
+  background-image: url("static_files/Humanities.jpg");
+  background-size: 100%;
+  background-position: left;
   background-color: yellow;
   margin-left: 60%;
 
 }
 
 #Science{
-  /*background-image: url("");*/
+    background-image: url("static_files/Science.jpg");
   background-color: orange;
   margin-left: 55%;
 
 }
 
 #Arts{
-  /*background-image: url("");*/
+  background-image: url("static_files/Art.jpg");
+  background-size: 80%;
+  background-position: left;
   background-color: green;
   margin-left: 55%;
+<<<<<<< HEAD
 
+}
+=======
+>>>>>>> b43e70d74994f41dda3ba35548baca25c0829e32
+
+#englishSubList{
+  display: none;
+}
+#humanitiesSubList{
+  display: none;
+}
+#scienceSubList{
+  display: none;
+}
+#mathSubList{
+  display: none;
+}
+#artSubList{
+  display: none;
 }
 
 #englishSubList{
@@ -109,22 +134,8 @@
   transform: rotate(60deg) translate(110px, 0);
 }
 
-.zoom {
+body {
   zoom: 60%;
-}
-
-#information{
-  background-color: black;
-  opacity: 0.3;
-  margin-left: 10%;
-  font-family: Helvetica;
-  color: white;
-  font-size: 30px;
-  width: 500px;
-  padding: 20px;
-  border-color: white;
-  border-radius: 20px;
-
 }
 
 
@@ -135,7 +146,79 @@ h1{
   font-size: 50px;
   color: #202833;
 }
+
 body{
   background-color: #F0F4F7;
+  background-size: 140%;
   margin-top: 20px;
+}
+
+#information {
+  width: 100%;
+  margin-top: 15%;
+  margin: 0,auto;
+  background-color: #8CB2CA;
+  border:#F0F4F7;
+  height: 1350px;
+}
+
+
+
+.myButton {
+  float: right;
+  margin-left: 80%;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+#menu{
+  display: none;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  font-family: Helvetica;
+  background-color: grey;
+  opacity: 0.8;
+  border-radius: 3px;
+  color: white;
+  float:right;
+  width: 20%;
+  z-index: -1;
+  height: 950px;
 }
