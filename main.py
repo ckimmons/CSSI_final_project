@@ -32,7 +32,7 @@ class MainHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         if user:
             greeting = ('Welcome, %s! (<a href="%s">sign_out</a>)' %
-                (user.nickname(), users.create_logout_url('/byebye')))
+                (user.nickname(), users.create_logout_url('/')))
         else:
             greeting = ('<a href="%s">Sign in or register</a>.' %
                 users.create_login_url('/'))
@@ -68,6 +68,7 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_data = stopwatch_query.fetch(limit=1)[0]
         self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
         stopwatch_data.delete()
+    
 
 
 
@@ -76,16 +77,16 @@ class LoginHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         if user:
             greeting = ('Welcome, %s! (<a href="%s">sign_out</a>)' %
-                (user.nickname(), users.create_logout_url('/byebye')))
+                (user.nickname(), users.create_logout_url('/')))
         else:
             greeting = ('<a href="%s">Sign in or register</a>.' %
                 users.create_login_url('/'))
         self.response.write('<html><body>%s</body></html>' % greeting)
 
 
-class ByeByeHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('<html><body>Bye!<button><a href="/">Home</a></button></body></html>')
+# class ByeByeHandler(webapp2.RequestHandler):
+#     def get(self):
+#         self.response.write('<html><body>Bye!<button><a href="/">Home</a></button></body></html>')
 
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -93,7 +94,7 @@ jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/login', LoginHandler),
-    ('/byebye', ByeByeHandler),
+    # ('/byebye', ByeByeHandler),
     ('/stopwatchstart', StopwatchStartHandler),
     ('/stopwatchstop', StopwatchStopHandler),
 ], debug=True)
