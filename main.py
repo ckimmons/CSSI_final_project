@@ -31,14 +31,20 @@ class MainHandler(webapp2.RequestHandler):
         template_vars = {"timeofday": time.asctime()}
         user = users.get_current_user()
         if user:
+            logging.info(user)
+            so_url = users.create_logout_url('/')
+            template_vars["logout"]= "<a href="+so_url+">sign_out</a>"
+            template = jinja_environment.get_template("homepage.html")
+            self.response.write(template.render(template_vars))
             greeting = ('Welcome, %s! (<a href="%s">sign_out</a>)' %
                 (user.nickname(), users.create_logout_url('/')))
         else:
-            greeting = ('<a href="%s">Sign in or register</a>.' %
-                users.create_login_url('/'))
-        self.response.write('<html><body>%s</body></html>' % greeting)
-        template = jinja_environment.get_template("homepage.html")
-        self.response.write(template.render(template_vars))
+            template_vars["login"] = "<a href="+users.create_login_url('/')+">Sign in or register</a>"
+            logging.info("user is not logged in")
+            template = jinja_environment.get_template("login.html")
+            self.response.write(template.render(template_vars))
+            # greeting = ('<a href="%s">Sign in or register</a>.' %
+            #     users.create_login_url('/'))
 
 
 
@@ -67,8 +73,14 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_query.order(-Stopwatch.endtime)
         stopwatch_data = stopwatch_query.fetch(limit=1)[0]
         self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
+<<<<<<< HEAD
         stopwatch_data.delete()
     
+=======
+        template_vars = {"timeofday": time.asctime()}
+        template = jinja_environment.get_template("stopwatch.html")
+        self.response.write(template.render(template_vars))
+>>>>>>> b3a4ce760e0e28b5d6192ae8dbad8d7737ae7aeb
 
 
 
@@ -84,9 +96,13 @@ class LoginHandler(webapp2.RequestHandler):
         self.response.write('<html><body>%s</body></html>' % greeting)
 
 
+<<<<<<< HEAD
 # class ByeByeHandler(webapp2.RequestHandler):
 #     def get(self):
 #         self.response.write('<html><body>Bye!<button><a href="/">Home</a></button></body></html>')
+=======
+
+>>>>>>> b3a4ce760e0e28b5d6192ae8dbad8d7737ae7aeb
 
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -94,7 +110,10 @@ jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/login', LoginHandler),
+<<<<<<< HEAD
     # ('/byebye', ByeByeHandler),
+=======
+>>>>>>> b3a4ce760e0e28b5d6192ae8dbad8d7737ae7aeb
     ('/stopwatchstart', StopwatchStartHandler),
     ('/stopwatchstop', StopwatchStopHandler),
 ], debug=True)
