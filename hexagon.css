@@ -34,7 +34,26 @@
   background-position: left;
   background-color: green;
   margin-left: 55%;
+<<<<<<< HEAD
 
+}
+=======
+>>>>>>> b43e70d74994f41dda3ba35548baca25c0829e32
+
+#englishSubList{
+  display: none;
+}
+#humanitiesSubList{
+  display: none;
+}
+#scienceSubList{
+  display: none;
+}
+#mathSubList{
+  display: none;
+}
+#artSubList{
+  display: none;
 }
 
 #englishSubList{
