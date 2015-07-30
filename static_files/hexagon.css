@@ -82,7 +82,7 @@
   float:right;
   width: 20%;
   z-index: -1;
-  height: 300px;
+  height: 350px;
 }
 
 #information {
@@ -117,21 +117,20 @@
 }
 
 #logOut{
+  text-decoration: none;
   font-family: Helvetica;
   color: white;
-  font-size: 20px;
+  font-size: 30px;
 }
 
-#logout:visited{
-  color:white;
-}
-
-#logout:visited{
-  color:white;
-}
-#logout:active{
-  color:white;
-}
+#logOut a:link{ color: white;
+text-decoration: none;}
+#logOut a:visited{ color:white;
+text-decoration: none; }
+#logOut a:hover{ color:white;
+text-decoration: none;}
+#logOut a:active{ color:white;
+text-decoration: none;}
 
 .hexagon {
   position: relative;
@@ -206,6 +205,9 @@ h1{
   color: #202833;
   /*font-family: 'Josefin Slab', serif;*/
 }
+h2{
+  z-index: -1;
+}
 
 body{
   background-color: #F0F4F7;
@@ -263,7 +265,8 @@ img{
 }
 
 .startButton {
-  margin-left: 100px;
+
+  margin-left: 230px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
 	box-shadow:inset 0px 1px 0px 0px #a4e271;
@@ -306,6 +309,8 @@ img{
 
 
 .stopButton {
+  margin-left: 150px;
+
 	-moz-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
 	box-shadow:inset 0px 1px 0px 0px #f7c5c0;
