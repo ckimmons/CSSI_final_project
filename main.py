@@ -116,9 +116,10 @@ jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/login', LoginHandler),
-    ('/stopwatchstart', StopwatchStartHandler),
-    ('/stopwatchstop', StopwatchStopHandler),
     ('/rewards', RewardsHandler),
     ('/notes', NotesHandler),
-    ('/progress', ProgressHandler)
+    ('/progress', ProgressHandler),
+    ('/stopwatchstart', StopwatchStartHandler),
+    ('/stopwatchstop', StopwatchStopHandler)
+
 ], debug=True)
