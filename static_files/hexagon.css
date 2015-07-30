@@ -126,6 +126,13 @@
   color:white;
 }
 
+#logout:visited{
+  color:white;
+}
+#logout:active{
+  color:white;
+}
+
 .hexagon {
   position: relative;
   margin: 100px auto;
@@ -256,6 +263,7 @@ img{
 }
 
 .startButton {
+  margin-left: 100px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
 	box-shadow:inset 0px 1px 0px 0px #a4e271;
@@ -298,7 +306,6 @@ img{
 
 
 .stopButton {
-
 	-moz-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
 	box-shadow:inset 0px 1px 0px 0px #f7c5c0;
