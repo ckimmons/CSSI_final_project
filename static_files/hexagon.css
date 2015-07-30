@@ -1,15 +1,16 @@
 #English{
   margin-top: 20px;
   background-image: url("English.jpg");
+  background-size: 200%;
   background-color: purple;
-  margin-left: 55%;
+  margin-left: 45%;
 }
 
 #Math{
   background-image: url("Math.jpg");
     background-size: 90%;
   background-color: blue;
-  margin-left: 60%;
+  margin-left: 50%;
 }
 
 #Humanities{
@@ -17,14 +18,14 @@
   background-size: 100%;
   background-position: left;
   background-color: yellow;
-  margin-left: 60%;
+  margin-left: 50%;
 
 }
 
 #Science{
     background-image: url("Science.jpg");
   background-color: orange;
-  margin-left: 55%;
+  margin-left: 45%;
 
 }
 
@@ -33,7 +34,7 @@
   background-size: 80%;
   background-position: left;
   background-color: green;
-  margin-left: 55%;
+  margin-left: 45%;
 }
 
 
@@ -120,6 +121,7 @@ ul{
 
 
 .hexagon {
+  display: none;
   position: relative;
   margin: 100px auto;
   width: 190px;
@@ -133,14 +135,14 @@ ul{
   font-size: 25px;
   font-weight: bold;
   letter-spacing: 6px;
-  color: white;
-  color: white;
+  color: black;
+  color: black;
   cursor: pointer;
   transition: color 500ms ease, text-shadow 500ms ease;
 }
 .hexagon:hover {
-  color: yellow;
-  text-shadow: 0 0 10px black;
+  /*color: yellow;
+  text-shadow: 0 0 10px black;*/
 }
 
 .hexagon .face1,
@@ -191,6 +193,7 @@ h1{
   font-size: 65px;
   color: #202833;
   font-family: 'Josefin Slab', serif;
+  display: none;
 }
 h2{
   padding-top: 5%;
@@ -213,29 +216,44 @@ img{
 }
 .hexagon li {
   list-style-type: none;
+    white-space: nowrap;
+    display: inline;
+    margin-left: 25%;
+    padding-left: 20px;
 }
 .hexagon * {
   display: inline;
+      English
 }
 .hexagon ul {
+  margin-left: 30px;
   display: none;
+    white-space: nowrap;
 }
 .hexagon:hover .sub-menu {
   display: inline;
+    white-space: nowrap;
+
+}
 }
 .links {
   display: inline-block;
+  white-space: nowrap;
 }
 .sub-menu:hover .links ul {
   display: inline;
+    white-space: nowrap;
+}
 }
 .sub-menu .links {
   display: block;
   width: 0;
   overflow-x: visible;
+    white-space: nowrap;
 }
 .sub-menu .links li {
   font-size: 0.5em;
+    white-space: nowrap;
 }
 
 
@@ -464,4 +482,16 @@ img{
   float: left;
   /*margin-left: 10%;*/
   margin-left: 3%;
+}
+
+#Cydney{
+  float:left;
+}
+
+#Katie{
+  float: none;
+}
+
+#Gabryelle{
+  float: none;
 }
