@@ -1,0 +1,24 @@
+body{
+  background: #171A39;
+  color: white;
+  font-family: Helvetica;
+}
+
+iframe{
+  margin-top: 5%;
+  margin-left: 32%;
+}
+
+h1, h3{
+  text-align: center;
+}
+
+/*#youtube{
+  margin-left: 20%;
+}*/
+
+form{
+  margin-left: 47%;
+}
+
+}

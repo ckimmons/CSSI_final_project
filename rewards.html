@@ -1,75 +1,32 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-   <style type="text/css">
-     html { height: 100% }
-     body { height: 100%; margin: 0; padding: 0 }
-     #map-canvas { height: 100% }
-   </style>
-   <!--jquery API-->
-   <script src="jquery.js" type="text/javascript"></script>
-   <!--google maps API-->
-   <script type="text/javascript"
-     src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true">
-   </script>
-   var initialLocation;
-var siberia = new google.maps.LatLng(60, 105);
-var newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
-var browserSupportFlag =  new Boolean();
+<head>
+    <link rel="stylesheet" tpye="text/css" href="static_files/rewards.css">
+</head>
+<body>
 
-function initialize() {
-  var myOptions = {
-    zoom: 6,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+<h1>  Congrats! You've met your study goals! </h1>
+<h3> Here's your rewards: </h3>
+<br>
+<form action="http://netflix.com">
+    <input type="submit" value="Netflix">
+</form>
 
-  // Try W3C Geolocation (Preferred)
-  if(navigator.geolocation) {
-    browserSupportFlag = true;
-    navigator.geolocation.getCurrentPosition(function(position) {
-      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-      map.setCenter(initialLocation);
-    }, function() {
-      handleNoGeolocation(browserSupportFlag);
-    });
-  }
-  // Browser doesn't support Geolocation
-  else {
-    browserSupportFlag = false;
-    handleNoGeolocation(browserSupportFlag);
-  }
-
-  function handleNoGeolocation(errorFlag) {
-    if (errorFlag == true) {
-      alert("Geolocation service failed.");
-      initialLocation = newyork;
-    } else {
-      alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
-      initialLocation = siberia;
-    }
-    map.setCenter(initialLocation);
-  }
-}
-   <script>
-   /*function for button*/
-
-   jQuery(window).ready(function(){
-       jQuery("#btnInit").click(initiate_geolocation);
-   });
-   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-        initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        map.setCenter(initialLocation);
-    });
-}
-     }
-     google.maps.event.addDomListener(window, 'load', initialize);
-
-   </script>
+<br>
+<form action="http://youtube.com">
+    <input type="submit" value="Youtube">
+</form>
+<br>
+<form action="http://grubhub.com">
+    <input type="submit" value="GrubHub">
+</form>
 
 
- </head>
+  <iframe src="//giphy.com/embed/11H2sYCtWyuTF6" width="480" height="384" frameBorder="10"
+  style="max-width: 100%" class="giphy-embed" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
 
+
+
+ </body>
 </html>

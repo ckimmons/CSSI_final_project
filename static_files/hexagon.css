@@ -37,40 +37,8 @@
 }
 
 
-#englishSubList{
-  display: none;
-}
-#humanitiesSubList{
-  display: none;
-}
-#scienceSubList{
-  display: none;
-}
-#mathSubList{
-  display: none;
-}
-#artSubList{
-  display: none;
-}
-
-#englishSubList{
-  display: none;
-}
-#humanitiesSubList{
-  display: none;
-}
-#scienceSubList{
-  display: none;
-}
-#mathSubList{
-  display: none;
-}
-#artSubList{
-  display: none;
-}
-
 #menu{
-
+  display: none;
   list-style: none;
   text-align: center;
   font-size: 30px;
@@ -92,7 +60,7 @@
   background-color: #8CB2CA;
  color: white;
   border:#F0F4F7;
-  height: 1350px;
+  height: 1450px;
   font-size: 30px;
 }
 
@@ -140,6 +108,16 @@ li a:hover{ color:white;
 text-decoration: none;}
 li a:active{ color:white;
 text-decoration: none;}
+
+li{
+  list-style-type: none;
+}
+
+
+ul{
+  list-style-type: none;
+}
+
 
 .hexagon {
   position: relative;
@@ -212,14 +190,18 @@ h1{
   font-family: Helvetica;
   font-size: 65px;
   color: #202833;
-  /*font-family: 'Josefin Slab', serif;*/
+  font-family: 'Josefin Slab', serif;
 }
 h2{
+  padding-top: 5%;
   z-index: -1;
+  text-align: center;
+  /*font-family: 'Josefin Slab', serif;*/
+  color: #202833;
 }
 
 body{
-  background-color: #F0F4F7;
+  background-color:#F0EDF3;
   background-size: 140%;
   margin-top: 20px;
 }
@@ -229,6 +211,33 @@ body{
 img{
   margin-left: 10%;
 }
+.hexagon li {
+  list-style-type: none;
+}
+.hexagon * {
+  display: inline;
+}
+.hexagon ul {
+  display: none;
+}
+.hexagon:hover .sub-menu {
+  display: inline;
+}
+.links {
+  display: inline-block;
+}
+.sub-menu:hover .links ul {
+  display: inline;
+}
+.sub-menu .links {
+  display: block;
+  width: 0;
+  overflow-x: visible;
+}
+.sub-menu .links li {
+  font-size: 0.5em;
+}
+
 
 .menuButton{
   float: right;
@@ -447,4 +456,12 @@ img{
 .stopButton:active {
 	position:relative;
 	top:1px;
+}
+
+#profilepictures{
+  position: relative;
+  margin-top: 10%;
+  float: left;
+  /*margin-left: 10%;*/
+  margin-left: 3%;
 }
