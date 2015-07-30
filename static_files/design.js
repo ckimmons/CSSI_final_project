@@ -31,7 +31,11 @@ $(window).load(function () {
       $('#Arts').stop().animate({ "margin-left": '55%' }, {queue: false});
     });
     $(".menuButton").click(function() {
-      $('.menuButton').stop().animate({ "margin-left": '80%' }, {queue: false});
-      $("#menu").slideToggle();
+      $("#menu").stop().slideDown(500);
     });
+    $("#menu").mouseleave(function() {
+      $("#menu").stop().delay(10000).slideUp(500);
+    });
+  
+
 });

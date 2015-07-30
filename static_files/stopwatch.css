@@ -4,10 +4,18 @@ body {
   background-image: url("background.jpg");
 }
 
+h1{
+  margin-top: 20%;
+  font-size: 100px;
+  font-family: 'Josefin Slab', serif;
+}
+h1:hover{
+  color: grey;
+}
 #go{
   margin-top: 10%;
   opacity: 2;
-  font-size: 500px;
+  font-size: 70px;
 }
 
 #go:hover {

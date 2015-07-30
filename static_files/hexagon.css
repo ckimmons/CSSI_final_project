@@ -82,7 +82,7 @@
   float:right;
   width: 20%;
   z-index: -1;
-  height: 950px;
+  height: 300px;
 }
 
 #information {
@@ -107,7 +107,31 @@
   font-size: 30px;
 }
 
+#timeOfDay{
+  font-family: Helvetica;
+  font-size: 20px;
+  margin-top: 1%;
+  z-index: -1;
+  margin-left: 87%;
+  float: right;
+}
 
+#logOut{
+  font-family: Helvetica;
+  color: white;
+  font-size: 20px;
+}
+
+#logout:visited{
+  color:white;
+}
+
+#logout:visited{
+  color:white;
+}
+#logout:active{
+  color:white;
+}
 
 .hexagon {
   position: relative;
@@ -178,8 +202,9 @@ h1{
   text-align: left;
   margin-left: 10%;
   font-family: Helvetica;
-  font-size: 50px;
+  font-size: 65px;
   color: #202833;
+  /*font-family: 'Josefin Slab', serif;*/
 }
 
 body{
@@ -238,6 +263,7 @@ img{
 }
 
 .startButton {
+  margin-left: 100px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
 	box-shadow:inset 0px 1px 0px 0px #a4e271;
@@ -280,7 +306,6 @@ img{
 
 
 .stopButton {
-
 	-moz-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
 	box-shadow:inset 0px 1px 0px 0px #f7c5c0;

@@ -5,36 +5,37 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="static_files/design.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <title> Welcome to Study Space! </title>
+  <title> Website Name </title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="static_files/design.js"></script>
 </head>
 <body>
-  <title> Website Name </title>
+
+<div  id ="timeOfDay"> {{ timeofday }} </div>
+
+
   <h1> Study Space </h1>
 
     <a href="/stopwatchstart" class="startButton">Start</a>
     <a href="/stopwatchstop?key_name={{ key_name }}" class="stopButton">Stop</a>
     <a href="#" class="menuButton">Menu</a>
 
-  {{ timeofday }}
 
-  {{ logout }}
-
-  <a href="#" class="myButton">Menu</a>
   <div id = "menu">
     <br>
   <ul>
-    <li style="list-style-type: none;"> Log in </li>
     <br>
     <li style="list-style-type: none;"> Track your progress </li>
     <br>
     <li style="list-style-type: none;"> Notes </li>
     <br>
     <li style="list-style-type: none;"> Rewards </li>
+
+    <div  id = "logOut">  {{ logout }} </div>
   </div>
 
   <div class="English-Menu">
