@@ -25,6 +25,7 @@ import time
 
 
 
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         key_name = self.request.get("key_name")
@@ -71,7 +72,7 @@ class ExistingNotesHandler(webapp2.RequestHandler):
 
 class Goal(ndb.Model):
     GoalWords = ndb.StringProperty()
-    GoalTime = ndb.FloatProperty()
+    GoalTime = ndb.StringProperty()
 
 class AddGoalsHandler(webapp2.RequestHandler):
     def get(self):
@@ -80,7 +81,7 @@ class AddGoalsHandler(webapp2.RequestHandler):
 
 class ExistingGoalsHandler(webapp2.RequestHandler):
     def post(self):
-        entry_number = float(self.request.get("goal_time"))
+        entry_number = self.request.get("goal_time")
         entry_words = self.request.get("goal_writing")
         new_goal = Goal(GoalTime = entry_number, GoalWords = entry_words)
         new_goal.put()
@@ -88,7 +89,6 @@ class ExistingGoalsHandler(webapp2.RequestHandler):
         list_of_goals.append(new_goal)
         template = jinja_environment.get_template("existinggoals.html")
         self.response.write(template.render({"list_of_goals": list_of_goals}))
-
 
 
 class ProgressHandler(webapp2.RequestHandler):
@@ -124,10 +124,10 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_query_ordered = stopwatch_query.order(-Stopwatch.endtime)
         stopwatch_list = stopwatch_query_ordered.get()
         stopwatch_data = stopwatch_list
-        self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
-        duration = stopwatch_data.endtime - stopwatch_data.starttime
-        template_vars = {"duration": duration.seconds /60, 
-         "maxMeter": Goal.query().fetch()[-1].GoalTime}
+
+        template_vars = {"duration": stopwatch_data.endtime - stopwatch_data.starttime}
+        template_vars = {"duration": stopwatch_data.endtime - stopwatch_data.starttime,
+        "maxMeter": Goal.query().fetch()[-1].GoalTime}
         template = jinja_environment.get_template("stopwatch.html")
         self.response.write(template.render(template_vars))
 
@@ -145,30 +145,8 @@ class LoginHandler(webapp2.RequestHandler):
         self.response.write('<html><body>%s</body></html>' % greeting)
 
 
-class MathHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("math.html")
-        self.response.write(template.render())
 
-class EnglishHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("english.html")
-        self.response.write(template.render())
 
-class ScienceHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("science.html")
-        self.response.write(template.render())
-
-class HumanitiesHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("humanities.html")
-        self.response.write(template.render())
-
-class ArtsHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("arts.html")
-        self.response.write(template.render())
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -182,11 +160,6 @@ app = webapp2.WSGIApplication([
     ('/existingnotes', ExistingNotesHandler),
     ('/progress', ProgressHandler),
     ('/stopwatchstart', StopwatchStartHandler),
-    ('/math', MathHandler),
-    ('/english', EnglishHandler),
-    ('/science', ScienceHandler),
-    ('/humanities', HumanitiesHandler),
-    ('/arts', ArtsHandler),
     ('/stopwatchstop', StopwatchStopHandler)
 
 ], debug=True)
