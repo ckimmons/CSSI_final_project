@@ -76,12 +76,7 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_list = stopwatch_query_ordered.get()
         stopwatch_data = stopwatch_list
         self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
-<<<<<<< HEAD
         template_vars = {"duration": stopwatch_data.endtime - stopwatch_data.starttime}
-=======
-
-        template_vars = {"timeofday": time.asctime()}
->>>>>>> 5bfb2160ca5652d0add2812171398d913975d713
         template = jinja_environment.get_template("stopwatch.html")
         self.response.write(template.render(template_vars))
 
@@ -98,12 +93,31 @@ class LoginHandler(webapp2.RequestHandler):
                 users.create_login_url('/'))
         self.response.write('<html><body>%s</body></html>' % greeting)
 
+
+
+class RewardsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("rewards.html")
+        self.response.write(template.render)
+
+class NotesHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("notes.html")
+        self.response.write(template.render)
+
+class ProgressHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("progress.html")
+        self.response.write(template.render)
+
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/login', LoginHandler),
-    # ('/byebye', ByeByeHandler),
     ('/stopwatchstart', StopwatchStartHandler),
     ('/stopwatchstop', StopwatchStopHandler),
+    ('/rewards', RewardsHandler),
+    ('/notes', NotesHandler),
+    ('/progress', ProgressHandler)
 ], debug=True)
