@@ -1,31 +1,31 @@
 $(window).load(function () {
 
-    $("#English").hover(function(){
+    $("#English").mouseenter(function(){
       $('#English').stop().animate({ "margin-left": '50%' }, {queue: false});
     });
     $("#English").mouseleave(function(){
       $('#English').stop().animate({ "margin-left": '55%' }, {queue: false});
     });
 
-    $("#Math").hover(function(){
+    $("#Math").mouseenter(function(){
       $('#Math').stop().animate({ "margin-left": '65%' }, {queue: false});
     });
     $("#Math").mouseleave(function(){
       $('#Math').stop().animate({ "margin-left": '60%' }, {queue: false});
     });
-    $("#Humanities").hover(function(){
+    $("#Humanities").mouseenter(function(){
       $('#Humanities').stop().animate({ "margin-left": '65%' }, {queue: false});
     });
     $("#Humanities").mouseleave(function(){
       $('#Humanities').stop().animate({ "margin-left": '60%' }, {queue: false});
     });
-    $("#Science").hover(function(){
+    $("#Science").mouseenter(function(){
       $('#Science').stop().animate({ "margin-left": '50%' }, {queue: false});
     });
     $("#Science").mouseleave(function(){
       $('#Science').stop().animate({ "margin-left": '55%' }, {queue: false});
     });
-    $("#Arts").hover(function(){
+    $("#Arts").mouseenter(function(){
       $('#Arts').stop().animate({ "margin-left": '50%' }, {queue: false});
     });
     $("#Arts").mouseleave(function(){

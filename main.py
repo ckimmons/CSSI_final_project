@@ -142,8 +142,30 @@ class LoginHandler(webapp2.RequestHandler):
         self.response.write('<html><body>%s</body></html>' % greeting)
 
 
+class MathHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("math.html")
+        self.response.write(template.render())
 
+class EnglishHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("english.html")
+        self.response.write(template.render())
 
+class ScienceHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("science.html")
+        self.response.write(template.render())
+
+class HumanitiesHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("humanities.html")
+        self.response.write(template.render())
+
+class ArtsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("arts.html")
+        self.response.write(template.render())
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -157,6 +179,11 @@ app = webapp2.WSGIApplication([
     ('/existingnotes', ExistingNotesHandler),
     ('/progress', ProgressHandler),
     ('/stopwatchstart', StopwatchStartHandler),
+    ('/math', MathHandler),
+    ('/english', EnglishHandler),
+    ('/science', ScienceHandler),
+    ('/humanities', HumanitiesHandler),
+    ('/arts', ArtsHandler),
     ('/stopwatchstop', StopwatchStopHandler)
 
 ], debug=True)
