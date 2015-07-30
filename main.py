@@ -91,7 +91,6 @@ class ExistingGoalsHandler(webapp2.RequestHandler):
         self.response.write(template.render({"list_of_goals": list_of_goals}))
 
 
-
 class ProgressHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("progress.html")

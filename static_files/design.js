@@ -6,6 +6,7 @@ $(window).load(function () {
     $("#English").mouseleave(function(){
       $('#English').stop().animate({ "margin-left": '55%' }, {queue: false});
     });
+
     $("#Math").hover(function(){
       $('#Math').stop().animate({ "margin-left": '65%' }, {queue: false});
     });
@@ -34,8 +35,8 @@ $(window).load(function () {
       $("#menu").stop().slideDown(500);
     });
     $("#menu").mouseleave(function() {
-      $("#menu").stop().delay(10000).slideUp(500);
+      $("#menu").stop().delay().slideUp(500);
     });
-  
+
 
 });
