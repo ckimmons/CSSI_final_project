@@ -46,6 +46,20 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(template.render(template_vars))
 
 
+class RewardsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("rewards.html")
+        self.response.write(template.render)
+
+class NotesHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("notes.html")
+        self.response.write(template.render)
+
+class ProgressHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("progress.html")
+        self.response.write(template.render)
 
 
 
@@ -95,20 +109,7 @@ class LoginHandler(webapp2.RequestHandler):
 
 
 
-class RewardsHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("rewards.html")
-        self.response.write(template.render)
 
-class NotesHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("notes.html")
-        self.response.write(template.render)
-
-class ProgressHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("progress.html")
-        self.response.write(template.render)
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
