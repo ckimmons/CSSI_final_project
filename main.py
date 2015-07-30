@@ -49,17 +49,17 @@ class MainHandler(webapp2.RequestHandler):
 class RewardsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("rewards.html")
-        self.response.write(template.render)
+        self.response.write(template.render())
 
 class NotesHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("notes.html")
-        self.response.write(template.render)
+        self.response.write(template.render())
 
 class ProgressHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("progress.html")
-        self.response.write(template.render)
+        self.response.write(template.render())
 
 
 
