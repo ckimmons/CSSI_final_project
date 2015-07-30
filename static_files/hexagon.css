@@ -70,7 +70,6 @@
 }
 
 #menu{
-  display: none;
   list-style: none;
   text-align: center;
   font-size: 30px;
@@ -130,6 +129,15 @@ text-decoration: none; }
 #logOut a:hover{ color:white;
 text-decoration: none;}
 #logOut a:active{ color:white;
+text-decoration: none;}
+
+li a:link{ color: white;
+text-decoration: none;}
+li a:visited{ color:white;
+text-decoration: none; }
+li a:hover{ color:white;
+text-decoration: none;}
+li a:active{ color:white;
 text-decoration: none;}
 
 .hexagon {
