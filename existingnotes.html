@@ -4,8 +4,18 @@
 <body>
 
 
-GO HERE
-{{ note }}
+<div id="all_my_notes">
 
+<ul>
+
+{% for note in list_of_notes %}
+<li>
+{{ note.NoteWords }}
+</li>
+
+{% endfor %}
+
+</ul>
+</div>
 </body>
 </html>

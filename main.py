@@ -52,6 +52,9 @@ class RewardsHandler(webapp2.RequestHandler):
         self.response.write(template.render())
 
 
+class Note(ndb.Model):
+    NoteWords = ndb.StringProperty()
+
 class AddNotesHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("addnotes.html")
@@ -59,11 +62,34 @@ class AddNotesHandler(webapp2.RequestHandler):
 
 class ExistingNotesHandler(webapp2.RequestHandler):
     def post(self):
-        logging.info("help")
-        note = self.request.get("note")
-        dict_notes = {"note" : note}
+        entry_note = self.request.get("note")
+        your_note = Note(NoteWords = entry_note)
+        your_note.put()
+        list_of_notes = Note.query().fetch()
+        list_of_notes.append(your_note)
         template = jinja_environment.get_template("existingnotes.html")
-        self.response.write(template.render(dict_notes))
+        self.response.write(template.render({"list_of_notes": list_of_notes}))
+
+class Goal(ndb.Model):
+    GoalWords = ndb.StringProperty()
+    GoalTime = ndb.StringProperty()
+
+class AddGoalsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("addgoals.html")
+        self.response.write(template.render())
+
+class ExistingGoalsHandler(webapp2.RequestHandler):
+    def post(self):
+        entry_number = self.request.get("goal_time")
+        entry_words = self.request.get("goal_writing")
+        new_goal = Goal(GoalTime = entry_number, GoalWords = entry_words)
+        new_goal.put()
+        list_of_goals = Goal.query().fetch()
+        list_of_goals.append(new_goal)
+        template = jinja_environment.get_template("existinggoals.html")
+        self.response.write(template.render({"list_of_goals": list_of_goals}))
+
 
 
 class ProgressHandler(webapp2.RequestHandler):
@@ -127,6 +153,8 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/login', LoginHandler),
     ('/rewards', RewardsHandler),
+    ('/addgoals', AddGoalsHandler),
+    ('/existinggoals', ExistingGoalsHandler),
     ('/addnotes', AddNotesHandler),
     ('/existingnotes', ExistingNotesHandler),
     ('/progress', ProgressHandler),
