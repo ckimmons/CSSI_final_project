@@ -49,17 +49,27 @@ class MainHandler(webapp2.RequestHandler):
 class RewardsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("rewards.html")
-        self.response.write(template.render)
+        self.response.write(template.render())
 
-class NotesHandler(webapp2.RequestHandler):
+
+class AddNotesHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template("notes.html")
-        self.response.write(template.render)
+        template = jinja_environment.get_template("addnotes.html")
+        self.response.write(template.render())
+
+class ExistingNotesHandler(webapp2.RequestHandler):
+    def post(self):
+        logging.info("help")
+        note = self.request.get("note")
+        dict_notes = {"note" : note}
+        template = jinja_environment.get_template("existingnotes.html")
+        self.response.write(template.render(dict_notes))
+
 
 class ProgressHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("progress.html")
-        self.response.write(template.render)
+        self.response.write(template.render())
 
 
 
@@ -117,7 +127,8 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/login', LoginHandler),
     ('/rewards', RewardsHandler),
-    ('/notes', NotesHandler),
+    ('/addnotes', AddNotesHandler),
+    ('/existingnotes', ExistingNotesHandler),
     ('/progress', ProgressHandler),
     ('/stopwatchstart', StopwatchStartHandler),
     ('/stopwatchstop', StopwatchStopHandler)
