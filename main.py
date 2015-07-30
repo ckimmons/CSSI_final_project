@@ -25,7 +25,6 @@ import time
 
 
 
-
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         key_name = self.request.get("key_name")
@@ -72,7 +71,7 @@ class ExistingNotesHandler(webapp2.RequestHandler):
 
 class Goal(ndb.Model):
     GoalWords = ndb.StringProperty()
-    GoalTime = ndb.StringProperty()
+    GoalTime = ndb.FloatProperty()
 
 class AddGoalsHandler(webapp2.RequestHandler):
     def get(self):
@@ -81,7 +80,7 @@ class AddGoalsHandler(webapp2.RequestHandler):
 
 class ExistingGoalsHandler(webapp2.RequestHandler):
     def post(self):
-        entry_number = self.request.get("goal_time")
+        entry_number = float(self.request.get("goal_time"))
         entry_words = self.request.get("goal_writing")
         new_goal = Goal(GoalTime = entry_number, GoalWords = entry_words)
         new_goal.put()
@@ -89,6 +88,7 @@ class ExistingGoalsHandler(webapp2.RequestHandler):
         list_of_goals.append(new_goal)
         template = jinja_environment.get_template("existinggoals.html")
         self.response.write(template.render({"list_of_goals": list_of_goals}))
+
 
 
 class ProgressHandler(webapp2.RequestHandler):
@@ -124,7 +124,10 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_query_ordered = stopwatch_query.order(-Stopwatch.endtime)
         stopwatch_list = stopwatch_query_ordered.get()
         stopwatch_data = stopwatch_list
-        template_vars = {"duration": stopwatch_data.endtime - stopwatch_data.starttime}
+        self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
+        duration = stopwatch_data.endtime - stopwatch_data.starttime
+        template_vars = {"duration": duration.seconds /60, 
+         "maxMeter": Goal.query().fetch()[-1].GoalTime}
         template = jinja_environment.get_template("stopwatch.html")
         self.response.write(template.render(template_vars))
 
