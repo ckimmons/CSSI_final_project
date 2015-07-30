@@ -12,6 +12,10 @@ h1{
 h1:hover{
   color: grey;
 }
+meter{
+    height: 75px;
+    width: 350px;
+}
 #go{
   margin-top: 10%;
   opacity: 2;
