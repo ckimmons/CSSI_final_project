@@ -126,7 +126,7 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_data = stopwatch_list
         self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
         duration = stopwatch_data.endtime - stopwatch_data.starttime
-        template_vars = {"duration": duration.seconds /60, 
+        template_vars = {"duration": duration.seconds /60,
          "maxMeter": Goal.query().fetch()[-1].GoalTime}
         template = jinja_environment.get_template("stopwatch.html")
         self.response.write(template.render(template_vars))
@@ -166,7 +166,6 @@ class GeometryHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("geometry.html")
         self.response.write(template.render())
 
-<<<<<<< HEAD
 class CalculusHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("calculus.html")
@@ -220,7 +219,7 @@ class DigitalMediaHandler(webapp2.RequestHandler):
 class FineArtsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("finearts.html")
-=======
+
 class MathHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("math.html")
@@ -244,7 +243,6 @@ class HumanitiesHandler(webapp2.RequestHandler):
 class ArtsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("arts.html")
->>>>>>> e9fbcf8c61764dc8f48481402380debefe205f9c
         self.response.write(template.render())
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -260,7 +258,6 @@ app = webapp2.WSGIApplication([
     ('/progress', ProgressHandler),
     ('/literature', LiteratureHandler),
     ('/stopwatchstart', StopwatchStartHandler),
-<<<<<<< HEAD
     ('/writing', WritingHandler),
     ('/storytelling', StorytellingHandler),
     ('/geometry', GeometryHandler),
@@ -275,13 +272,11 @@ app = webapp2.WSGIApplication([
     ('/performingarts', PerformingArtsHandler),
     ('/digitalmedia', DigitalMediaHandler),
     ('/finearts', FineArtsHandler),
-=======
     ('/math', MathHandler),
     ('/english', EnglishHandler),
     ('/science', ScienceHandler),
     ('/humanities', HumanitiesHandler),
     ('/arts', ArtsHandler),
->>>>>>> e9fbcf8c61764dc8f48481402380debefe205f9c
     ('/stopwatchstop', StopwatchStopHandler)
 
 ], debug=True)
