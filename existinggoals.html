@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+GO HERE
+
+<div id="all_my_goals">
+
+<ul>
+
+{% for goal in list_of_goals %}
+  <li>
+  {{ goal.GoalTime }} </li>
+  <li>
+  {{ goal.GoalWords }} </li>
+
+{% endfor %}
+
+</ul>
+</div>
+
+</body>
+</html>

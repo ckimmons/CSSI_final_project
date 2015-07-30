@@ -51,10 +51,45 @@ class RewardsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("rewards.html")
         self.response.write(template.render())
 
-class NotesHandler(webapp2.RequestHandler):
+
+class Note(ndb.Model):
+    NoteWords = ndb.StringProperty()
+
+class AddNotesHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template("notes.html")
+        template = jinja_environment.get_template("addnotes.html")
         self.response.write(template.render())
+
+class ExistingNotesHandler(webapp2.RequestHandler):
+    def post(self):
+        entry_note = self.request.get("note")
+        your_note = Note(NoteWords = entry_note)
+        your_note.put()
+        list_of_notes = Note.query().fetch()
+        list_of_notes.append(your_note)
+        template = jinja_environment.get_template("existingnotes.html")
+        self.response.write(template.render({"list_of_notes": list_of_notes}))
+
+class Goal(ndb.Model):
+    GoalWords = ndb.StringProperty()
+    GoalTime = ndb.StringProperty()
+
+class AddGoalsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("addgoals.html")
+        self.response.write(template.render())
+
+class ExistingGoalsHandler(webapp2.RequestHandler):
+    def post(self):
+        entry_number = self.request.get("goal_time")
+        entry_words = self.request.get("goal_writing")
+        new_goal = Goal(GoalTime = entry_number, GoalWords = entry_words)
+        new_goal.put()
+        list_of_goals = Goal.query().fetch()
+        list_of_goals.append(new_goal)
+        template = jinja_environment.get_template("existinggoals.html")
+        self.response.write(template.render({"list_of_goals": list_of_goals}))
+
 
 class ProgressHandler(webapp2.RequestHandler):
     def get(self):
@@ -116,9 +151,13 @@ jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/login', LoginHandler),
-    ('/stopwatchstart', StopwatchStartHandler),
-    ('/stopwatchstop', StopwatchStopHandler),
     ('/rewards', RewardsHandler),
-    ('/notes', NotesHandler),
-    ('/progress', ProgressHandler)
+    ('/addgoals', AddGoalsHandler),
+    ('/existinggoals', ExistingGoalsHandler),
+    ('/addnotes', AddNotesHandler),
+    ('/existingnotes', ExistingNotesHandler),
+    ('/progress', ProgressHandler),
+    ('/stopwatchstart', StopwatchStartHandler),
+    ('/stopwatchstop', StopwatchStopHandler)
+
 ], debug=True)
