@@ -71,7 +71,7 @@
   text-shadow: 3px 3px grey;
   list-style: none;
   text-align: right;
-  font-size: 70px;
+  font-size: 40px;
   font-family: Helvetica;
   background-color: inherit;
   border-radius: 3px;
@@ -117,7 +117,7 @@
   text-decoration: none;
   font-family: Helvetica;
   color: white;
-  font-size: 70px;
+  font-size: 40px;
 }
 
 #logOut a:link{ color: white;
