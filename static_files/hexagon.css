@@ -6,15 +6,20 @@
   width: 500px;
   font-size: 2em;*/
     text-align: left;
-    margin-left: 10%;
-    paddint-top: 300px;
+    margin-left: 8%;
+    margin-top: 20%;
+    padding: -top: 300px;
     font-family: Helvetica;
-    font-size: 40px;
+    font-size: 35px;
+    color: #252829;
+    text-align: center;
     color: #202833;
-    font-family: 'HelveticaNeue', sans-serif;
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     width: 550px;
-    height: 1000px;
+    height: 500px;
     position: absolute;
+    background-color:#E3F1F8;
+    border: 5px solid #BBC7CD;
 
 }
 
