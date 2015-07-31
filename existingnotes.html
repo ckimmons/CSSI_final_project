@@ -16,15 +16,18 @@
 <ul>
 
 {% for note in list_of_notes %}
-<li>
 
-{{ note.NoteWords }}
-<br>
-</li>
+  <li>
+  {{ note.NoteWords }}
+  </li>
 
 {% endfor %}
 
 </ul>
 </div>
+
+<a href="/" class="button">Home</a>
+<a href="/addnotes" class="button">Add Another Note</a>
+
 </body>
 </html>
