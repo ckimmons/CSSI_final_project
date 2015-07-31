@@ -85,12 +85,7 @@ class AddGoalsHandler(webapp2.RequestHandler):
 
 class ExistingGoalsHandler(webapp2.RequestHandler):
     def post(self):
-        goaltimestring = self.request.get("goal_time")
-        if goaltimestring == "":
-            self.response.write("Please enter both fields")
-            return
-
-        entry_number = float()
+        entry_number = float(self.request.get("goal_time"))
         entry_words = self.request.get("goal_writing")
         new_goal = Goal(GoalTime = entry_number, GoalWords = entry_words)
         new_goal.put()
@@ -98,6 +93,8 @@ class ExistingGoalsHandler(webapp2.RequestHandler):
         list_of_goals.append(new_goal)
         template = jinja_environment.get_template("existinggoals.html")
         self.response.write(template.render({"list_of_goals": list_of_goals}))
+
+
 
 
 
