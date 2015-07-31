@@ -1,3 +1,25 @@
+#description {
+  /*position: absolute;
+  padding-left: 150px;
+  padding-top: 200px;
+  height: 700px;
+  width: 500px;
+  font-size: 2em;*/
+    text-align: left;
+    margin-left: 10%;
+    paddint-top: 300px;
+    font-family: Helvetica;
+    font-size: 40px;
+    color: #202833;
+    font-family: 'HelveticaNeue', sans-serif;
+    width: 550px;
+    height: 1000px;
+    position: absolute;
+
+}
+
+
+
 #English{
   margin-top: 20px;
   background-image: url("English.jpg");
@@ -40,12 +62,13 @@
 
 #menu{
   display: none;
+  margin-right: 20px;
+  text-shadow: 3px 3px grey;
   list-style: none;
-  text-align: center;
+  text-align: right;
   font-size: 30px;
   font-family: Helvetica;
-  background-color: grey;
-  opacity: 0.8;
+  background-color: inherit;
   border-radius: 3px;
   color: white;
   float:right;
@@ -204,7 +227,7 @@ h2{
 }
 
 body{
-  background-color:#F0EDF3;
+  background-color:#c4d1d6;
   background-size: 140%;
   margin-top: 20px;
 }
@@ -255,6 +278,7 @@ img{
   font-size: 0.5em;
     white-space: nowrap;
 }
+
 
 
 .menuButton{
@@ -474,6 +498,12 @@ img{
 .stopButton:active {
 	position:relative;
 	top:1px;
+}
+
+#PROcrastination_information {
+  text-align: center;
+  font-size: 2em;
+  margin: 25px;
 }
 
 #profilepictures{

@@ -25,6 +25,10 @@ import time
 
 
 
+
+
+
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         key_name = self.request.get("key_name")
@@ -43,6 +47,7 @@ class MainHandler(webapp2.RequestHandler):
             logging.info("user is not logged in")
             template = jinja_environment.get_template("login.html")
             self.response.write(template.render(template_vars))
+
 
 
 class RewardsHandler(webapp2.RequestHandler):
@@ -80,7 +85,12 @@ class AddGoalsHandler(webapp2.RequestHandler):
 
 class ExistingGoalsHandler(webapp2.RequestHandler):
     def post(self):
-        entry_number = float(self.request.get("goal_time"))
+        goaltimestring = self.request.get("goal_time")
+        if goaltimestring == "":
+            self.response.write("Please enter both fields")
+            return
+
+        entry_number = float()
         entry_words = self.request.get("goal_writing")
         new_goal = Goal(GoalTime = entry_number, GoalWords = entry_words)
         new_goal.put()
@@ -126,6 +136,7 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_data = stopwatch_list
         # self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
         duration = stopwatch_data.endtime - stopwatch_data.starttime
+
         template_vars = {"duration": duration.seconds /60.0,
          "maxMeter": Goal.query().fetch()[-1].GoalTime}
         template = jinja_environment.get_template("stopwatch.html")
@@ -165,7 +176,6 @@ class GeometryHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("geometry.html")
         self.response.write(template.render())
-
 
 class CalculusHandler(webapp2.RequestHandler):
     def get(self):
@@ -220,6 +230,7 @@ class DigitalMediaHandler(webapp2.RequestHandler):
 class FineArtsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("finearts.html")
+        self.response.write(template.render())
 
 class MathHandler(webapp2.RequestHandler):
     def get(self):
@@ -275,7 +286,14 @@ app = webapp2.WSGIApplication([
     ('/math', MathHandler),
     ('/english', EnglishHandler),
     ('/science', ScienceHandler),
+<<<<<<< HEAD
     ('/humanities', HumanitiesHandler),
+=======
+    #
+    # ('/humanities', HumanitiesHandler),
+
+    # ('/humanities', HumanitiesHandler),
+>>>>>>> 9efb3ac333a64e1c41143bf2192bdf4cfd86e456
     ('/arts', ArtsHandler),
     ('/stopwatchstop', StopwatchStopHandler)
 
