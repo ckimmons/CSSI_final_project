@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+  <link rel="stylesheet" type="text/css" href="/static_files/goals.css">
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+  <title> Pro.crastinate | Review Goals </title>
+</head>
 <body>
 
 
-GO HERE
-
+<h1> Review Your Goals and Rewards: </h1>
 <div id="all_my_goals">
 
 <ul>
 
 {% for goal in list_of_goals %}
   <li>
+    Your goal time:
   {{ goal.GoalTime }} </li>
   <li>
+    Your reward:
   {{ goal.GoalWords }} </li>
 
 {% endfor %}
 
 </ul>
+<br>
 </div>
 
 </body>

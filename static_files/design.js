@@ -1,5 +1,5 @@
 $(window).load(function () {
-    
+
     $("#English").hover(function(){
       $('#English').stop().animate({ "margin-left": '40%' }, {queue: false});
     });

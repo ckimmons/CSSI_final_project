@@ -1,0 +1,40 @@
+h1{
+    font-family: 'Josefin Slab', serif;
+    text-align: center;
+}
+h4{
+     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+     font-weight: 300;
+     text-align: center;
+  }
+
+body{
+  text-align: center;
+  background-image: url("background3.png");
+
+}
+
+input{
+  height: 70px;
+  width:  150px;
+  font-size: 12px;
+}
+
+li{
+  padding-top: 20px;
+  list-style-type: none;
+  list-style: none;
+  font-family: Helvetica;
+  font-size: 25px;
+}
+
+#all_my_notes{
+  background-color: white;
+  width: 100px;
+  margin-left: 31%;
+}
+
+#goals{
+  height: 100px;
+  width: 300px;
+}

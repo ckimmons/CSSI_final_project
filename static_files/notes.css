@@ -1,0 +1,26 @@
+h1{
+    font-family: 'Josefin Slab', serif;
+}
+
+body{
+  text-align: center;
+  background-image: url("background2.jpg");
+
+}
+
+input{
+  height: 400px;
+  width: 400px;
+  font-size: 12px;
+}
+
+li{
+  list-style-type: none;
+  list-style: none;
+}
+
+#all_my_notes{
+  background-color: white;
+  width: 500px;
+  margin-left: 31%;
+}
