@@ -25,6 +25,10 @@ import time
 
 
 
+
+
+
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         key_name = self.request.get("key_name")
@@ -43,6 +47,7 @@ class MainHandler(webapp2.RequestHandler):
             logging.info("user is not logged in")
             template = jinja_environment.get_template("login.html")
             self.response.write(template.render(template_vars))
+
 
 
 class RewardsHandler(webapp2.RequestHandler):
@@ -219,6 +224,8 @@ class DigitalMediaHandler(webapp2.RequestHandler):
 class FineArtsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("finearts.html")
+        self.response.write(template.render())
+
 
 class MathHandler(webapp2.RequestHandler):
     def get(self):
@@ -276,7 +283,6 @@ app = webapp2.WSGIApplication([
     ('/english', EnglishHandler),
     ('/science', ScienceHandler),
     ('/humanities', HumanitiesHandler),
-    ('/arts', ArtsHandler),
     ('/stopwatchstop', StopwatchStopHandler)
 
 ], debug=True)
