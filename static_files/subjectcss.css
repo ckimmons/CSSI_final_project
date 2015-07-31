@@ -33,6 +33,7 @@ text-decoration: none;}
 li{
   list-style: none;
   padding-top: 20px;
+  text-align: center;
 }
 
  a:link{ color: white;
@@ -43,7 +44,3 @@ text-decoration: none; }
 text-decoration: none;}
 a:active{ color:white;
 text-decoration: none;}
-
-a{
-  padding-left: 50px;
-}
