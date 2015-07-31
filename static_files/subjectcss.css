@@ -35,18 +35,15 @@ li{
   padding-top: 20px;
 }
 
-#youtube{
-  float: right;
-  margin-left: 75%;
-}
+ a:link{ color: white;
+text-decoration: none;}
+a:visited{ color:white;
+text-decoration: none; }
+ a:hover{ color:white;
+text-decoration: none;}
+a:active{ color:white;
+text-decoration: none;}
 
-#netflix{
-  float: left;
-  margin-left: 75%;
-}
-
-
-#grubhub{
-  float: left;
-  margin-left: 75%;
+a{
+  padding-left: 50px;
 }
