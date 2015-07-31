@@ -135,11 +135,14 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         # self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
         duration = stopwatch_data.endtime - stopwatch_data.starttime
 
+        maxMeter = Goal.query().fetch()[-1].GoalTime
         template_vars = {"duration": duration.seconds /60.0,
-         "maxMeter": Goal.query().fetch()[-1].GoalTime}
+         "maxMeter": maxMeter}
+         
+
         template = jinja_environment.get_template("stopwatch.html")
         self.response.write(template.render(template_vars))
-        
+
 
 
 
