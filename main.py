@@ -286,7 +286,6 @@ app = webapp2.WSGIApplication([
     ('/math', MathHandler),
     ('/english', EnglishHandler),
     ('/science', ScienceHandler),
-
     ('/arts', ArtsHandler),
     ('/stopwatchstop', StopwatchStopHandler)
 
