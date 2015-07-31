@@ -143,7 +143,7 @@ ul{
 
 
 .hexagon {
-  display: none;
+
   position: relative;
   margin: 100px auto;
   width: 190px;
@@ -215,7 +215,7 @@ h1{
   font-size: 65px;
   color: #202833;
   font-family: 'Josefin Slab', serif;
-  display: none;
+
 }
 h2{
   padding-top: 5%;

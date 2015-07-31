@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+  <link rel="stylesheet" type="text/css" href="/static_files/goals.css">
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+  <title> Pro.crastinate | Study goals </title>
+</head>
 <body>
 
 
-WHAT IS YOUR GOAL?
+<h1> How long do you need to study? </h1>
 
 <form action="/existinggoals" method="POST">
-  <input type="text" name="goal_time">How long do you want to study?</input>
-  <input type="text_area" name="goal_writing">This is my reward</input>
+  <h4> How long would you like to study (in minutes)? <h4>
+  <input type="text" name="goal_time"></input>
+  <h4> What do you want your reward to be? <h4>
+  <input type="text_area" name="goal_writing" id = "goals"></input>
+  <br>
   <button type="submit" value="submit">Add to goals</button>
 
 </body>

@@ -129,9 +129,13 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_query_ordered = stopwatch_query.order(-Stopwatch.endtime)
         stopwatch_list = stopwatch_query_ordered.get()
         stopwatch_data = stopwatch_list
-        self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
+        # self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
         duration = stopwatch_data.endtime - stopwatch_data.starttime
+<<<<<<< HEAD
         template_vars = {"duration": duration.seconds /60,
+=======
+        template_vars = {"duration": duration.seconds /60.0,
+>>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
          "maxMeter": Goal.query().fetch()[-1].GoalTime}
         template = jinja_environment.get_template("stopwatch.html")
         self.response.write(template.render(template_vars))
@@ -171,6 +175,10 @@ class GeometryHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("geometry.html")
         self.response.write(template.render())
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
 class CalculusHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("calculus.html")
@@ -224,8 +232,11 @@ class DigitalMediaHandler(webapp2.RequestHandler):
 class FineArtsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("finearts.html")
+<<<<<<< HEAD
         self.response.write(template.render())
 
+=======
+>>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
 
 class MathHandler(webapp2.RequestHandler):
     def get(self):
@@ -242,15 +253,14 @@ class ScienceHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("science.html")
         self.response.write(template.render())
 
-class HumanitiesHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template("humanities.html")
-        self.response.write(template.render())
+
+
 
 class ArtsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("arts.html")
         self.response.write(template.render())
+
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -282,7 +292,12 @@ app = webapp2.WSGIApplication([
     ('/math', MathHandler),
     ('/english', EnglishHandler),
     ('/science', ScienceHandler),
+<<<<<<< HEAD
     ('/humanities', HumanitiesHandler),
+=======
+    # ('/humanities', HumanitiesHandler),
+    ('/arts', ArtsHandler),
+>>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
     ('/stopwatchstop', StopwatchStopHandler)
 
 ], debug=True)
