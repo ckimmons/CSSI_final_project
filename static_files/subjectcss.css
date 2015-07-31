@@ -1,0 +1,30 @@
+body
+{
+font-size: 50px;
+  background: white;
+}
+
+
+/* unvisited link */
+li:link {
+    color: black;
+     text-decoration: none;
+}
+
+/* visited link */
+li:visited {
+    color: black;
+     text-decoration: none;
+}
+
+/* mouse over link */
+li:hover {
+    color: black;
+     text-decoration: none;
+}
+
+/* selected link */
+li:active {
+    color: black;
+     text-decoration: none;
+}

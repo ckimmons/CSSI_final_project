@@ -85,7 +85,12 @@ class AddGoalsHandler(webapp2.RequestHandler):
 
 class ExistingGoalsHandler(webapp2.RequestHandler):
     def post(self):
-        entry_number = float(self.request.get("goal_time"))
+        goaltimestring = self.request.get("goal_time")
+        if goaltimestring == "":
+            self.response.write("Please enter both fields")
+            return
+
+        entry_number = float()
         entry_words = self.request.get("goal_writing")
         new_goal = Goal(GoalTime = entry_number, GoalWords = entry_words)
         new_goal.put()
@@ -131,11 +136,8 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_data = stopwatch_list
         # self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
         duration = stopwatch_data.endtime - stopwatch_data.starttime
-<<<<<<< HEAD
-        template_vars = {"duration": duration.seconds /60,
-=======
+
         template_vars = {"duration": duration.seconds /60.0,
->>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
          "maxMeter": Goal.query().fetch()[-1].GoalTime}
         template = jinja_environment.get_template("stopwatch.html")
         self.response.write(template.render(template_vars))
@@ -175,10 +177,6 @@ class GeometryHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("geometry.html")
         self.response.write(template.render())
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
 class CalculusHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("calculus.html")
@@ -232,11 +230,7 @@ class DigitalMediaHandler(webapp2.RequestHandler):
 class FineArtsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("finearts.html")
-<<<<<<< HEAD
         self.response.write(template.render())
-
-=======
->>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
 
 class MathHandler(webapp2.RequestHandler):
     def get(self):
@@ -292,12 +286,11 @@ app = webapp2.WSGIApplication([
     ('/math', MathHandler),
     ('/english', EnglishHandler),
     ('/science', ScienceHandler),
-<<<<<<< HEAD
-    ('/humanities', HumanitiesHandler),
-=======
+    #
+    # ('/humanities', HumanitiesHandler),
+
     # ('/humanities', HumanitiesHandler),
     ('/arts', ArtsHandler),
->>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
     ('/stopwatchstop', StopwatchStopHandler)
 
 ], debug=True)

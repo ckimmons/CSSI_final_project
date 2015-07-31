@@ -15,10 +15,7 @@ $(window).load(function () {
     $("#Math").mouseleave(function(){
       $('#Math').stop().animate({ "margin-left": '50%' }, {queue: false});
     });
-<<<<<<< HEAD
 
-=======
->>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
     $("#Humanities").hover(function(){
       $('#Humanities').stop().animate({ "margin-left": '55%' }, {queue: false});
     });
@@ -26,10 +23,7 @@ $(window).load(function () {
     $("#Humanities").mouseleave(function(){
       $('#Humanities').stop().animate({ "margin-left": '50%' }, {queue: false});
     });
-<<<<<<< HEAD
 
-=======
->>>>>>> 940dd26371ee2faf810495090cd4b79e20b843e3
     $("#Science").hover(function(){
       $('#Science').stop().animate({ "margin-left": '40%' }, {queue: false});
     });
