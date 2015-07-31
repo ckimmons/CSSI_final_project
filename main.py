@@ -124,7 +124,7 @@ class StopwatchStopHandler(webapp2.RequestHandler):
         stopwatch_query_ordered = stopwatch_query.order(-Stopwatch.endtime)
         stopwatch_list = stopwatch_query_ordered.get()
         stopwatch_data = stopwatch_list
-        self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
+        # self.response.write(stopwatch_data.endtime - stopwatch_data.starttime)
         duration = stopwatch_data.endtime - stopwatch_data.starttime
         template_vars = {"duration": duration.seconds /60.0,
          "maxMeter": Goal.query().fetch()[-1].GoalTime}
@@ -166,7 +166,7 @@ class GeometryHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("geometry.html")
         self.response.write(template.render())
 
-<<<<<<< HEAD
+
 class CalculusHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("calculus.html")
@@ -182,8 +182,6 @@ class LifeScienceHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("lifescience.html")
         self.response.write(template.render())
 
-<<<<<<< HEAD
-=======
 class ChemistryHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("chemistry.html")
@@ -222,7 +220,7 @@ class DigitalMediaHandler(webapp2.RequestHandler):
 class FineArtsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("finearts.html")
-=======
+
 class MathHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("math.html")
@@ -277,7 +275,7 @@ app = webapp2.WSGIApplication([
     ('/math', MathHandler),
     ('/english', EnglishHandler),
     ('/science', ScienceHandler),
-    ('/humanities', HumanitiesHandler),
+    # ('/humanities', HumanitiesHandler),
     ('/arts', ArtsHandler),
     ('/stopwatchstop', StopwatchStopHandler)
 
