@@ -144,8 +144,107 @@ class LoginHandler(webapp2.RequestHandler):
                 users.create_login_url('/'))
         self.response.write('<html><body>%s</body></html>' % greeting)
 
+class WritingHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("writing.html")
+        self.response.write(template.render())
 
 
+class StorytellingHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("storytelling.html")
+        self.response.write(template.render())
+
+class LiteratureHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("literature.html")
+        self.response.write(template.render())
+
+
+class GeometryHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("geometry.html")
+        self.response.write(template.render())
+
+<<<<<<< HEAD
+class CalculusHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("calculus.html")
+        self.response.write(template.render())
+
+class StatisticsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("statistics.html")
+        self.response.write(template.render())
+
+class LifeScienceHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("lifescience.html")
+        self.response.write(template.render())
+
+<<<<<<< HEAD
+=======
+class ChemistryHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("chemistry.html")
+        self.response.write(template.render())
+
+class PhysicsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("physics.html")
+        self.response.write(template.render())
+
+class HistoryHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("history.html")
+        self.response.write(template.render())
+
+class PsychologyHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("psychology.html")
+        self.response.write(template.render())
+
+class PhilosophyHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("philosophy.html")
+        self.response.write(template.render())
+
+class PerformingArtsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("performingarts.html")
+        self.response.write(template.render())
+
+class DigitalMediaHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("digitalmedia.html")
+        self.response.write(template.render())
+
+class FineArtsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("finearts.html")
+=======
+class MathHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("math.html")
+        self.response.write(template.render())
+
+class EnglishHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("english.html")
+        self.response.write(template.render())
+
+class ScienceHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("science.html")
+        self.response.write(template.render())
+
+
+
+
+class ArtsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("arts.html")
+        self.response.write(template.render())
 
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -159,7 +258,27 @@ app = webapp2.WSGIApplication([
     ('/addnotes', AddNotesHandler),
     ('/existingnotes', ExistingNotesHandler),
     ('/progress', ProgressHandler),
+    ('/literature', LiteratureHandler),
     ('/stopwatchstart', StopwatchStartHandler),
+    ('/writing', WritingHandler),
+    ('/storytelling', StorytellingHandler),
+    ('/geometry', GeometryHandler),
+    ('/calculus', CalculusHandler),
+    ('/statistics', StatisticsHandler),
+    ('/lifescience', LifeScienceHandler),
+    ('/chemistry', ChemistryHandler),
+    ('/physics', PhysicsHandler),
+    ('/history', HistoryHandler),
+    ('/psychology', PsychologyHandler),
+    ('/philosophy', PhilosophyHandler),
+    ('/performingarts', PerformingArtsHandler),
+    ('/digitalmedia', DigitalMediaHandler),
+    ('/finearts', FineArtsHandler),
+    ('/math', MathHandler),
+    ('/english', EnglishHandler),
+    ('/science', ScienceHandler),
+    ('/humanities', HumanitiesHandler),
+    ('/arts', ArtsHandler),
     ('/stopwatchstop', StopwatchStopHandler)
 
 ], debug=True)
