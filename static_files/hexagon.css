@@ -261,6 +261,7 @@ img{
 .hexagon:hover .sub-menu {
   display: inline;
     white-space: nowrap;
+    padding: 40px;
 
 }
 }
